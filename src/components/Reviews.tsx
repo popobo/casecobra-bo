@@ -17,10 +17,10 @@ const PHONES = [
   "/testimonials/6.jpg",
 ];
 
-function splitArray<T>(array: T[], numParts: number) {
+function splitArray<T>(array: Array<T>, numParts: number) {
   const result: Array<Array<T>> = [];
 
-  for (let i = 0; i < numParts; i++) {
+  for (let i = 0; i < array.length; i++) {
     const index = i % numParts;
     if (!result[index]) {
       result[index] = [];
@@ -104,13 +104,13 @@ const Review = ({ imgSrc, className, ...props }: ReviewProps) => {
   return (
     <div
       className={cn(
-        "animate-fade-in rounded-[2.25rem] bg-white p-6 opacity-0 shadow-xl shadow-slate-900/5 ",
+        "animate-fade-in rounded-[2.25rem] bg-white p-6 opacity-0 shadow-xl shadow-slate-900/5",
         className
       )}
       style={{ animationDelay }}
       {...props}
     >
-      <Phone imgSrc={imgSrc} className="w-64" />
+      <Phone imgSrc={imgSrc} className="" />
     </div>
   );
 };
